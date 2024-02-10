@@ -4,6 +4,7 @@ async function getPrice() {
 
     
   try {
+      
     let price = [
       ...document.querySelectorAll(".item-_gbYDtbd .itemTitle-_gbYDtbd"),
     ].find((item) => item.textContent === "Close");
