@@ -1,6 +1,7 @@
 ////////////////////////////select number
 
 async function getPrice() {
+
     
   try {
     let price = [
