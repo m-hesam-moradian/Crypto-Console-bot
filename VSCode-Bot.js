@@ -1,47 +1,160 @@
+////////////////////////////select number
 
+// async function getPrice() {
+//   try {
+//     let price = [
+//       ...document.querySelectorAll(".item-_gbYDtbd .itemTitle-_gbYDtbd"),
+//     ].find((item) => item.textContent === "Close");
+//     if (price) {
+//       //   console.log(price.nextElementSibling.textContent);
+//     } else {
+//       console.log("Price not found");
+//     }
+//     console.log("Current price: $" + price.nextElementSibling.textContent);
+//   } catch (error) {
+//     console.error("Failed to fetch price: " + error);
+//   } finally {
+//     setTimeout(getPrice, 1000);
+//   }
+// }
+
+// getPrice();
+///
+/////////my bot
 
 let deposit = 100;
 let orderID = null;
 let trade = null;
 let lastTrade = 1;
+let MonetFlowing = 1;
 
-
-setInterval(() => {
-  console.clear();
+const intervalId = setInterval(() => {
+  // console.clear();
+  if (deposit <= 0) {
+       clearInterval(intervalId);
+    console.log("your liquaded");
+    console.log("your liquaded");
+    console.log("your liquaded");
+    console.log("your liquaded");
+    console.log("your liquaded");
+    console.log("your liquaded");
+    console.log("your liquaded");
+    console.log("your liquaded");
+    console.log("your liquaded");
+    console.log("your liquaded");
+    console.log("your liquaded");
+    console.log("your liquaded");
+ 
+  }
+  const EMA = document.querySelectorAll(
+    ".valueValue-l31H9iuA.apply-common-tooltip"
+  );
+  let GreenMA = Number(EMA[0].innerHTML);
+  let RedMA = Number(EMA[1].innerHTML);
 
   let price = [
     ...document.querySelectorAll(".item-_gbYDtbd .itemTitle-_gbYDtbd"),
   ].find((item) => item.textContent === "Close");
 
   if (price) {
-    console.log(price.nextElementSibling.textContent);
+    // console.log(price.nextElementSibling.textContent);
     if (trade) {
-      // console.log(trade, trade + trade * 0.01, trade - trade * 0.01);
-      if (
-        Number(price.nextElementSibling.textContent) >=
-        trade + trade * 0.0001
-      ) {
-        console.log("reach to TP");
-        console.log(deposit);
-        deposit += 2;
-        trade = null;
-      } else if (
-        Number(price.nextElementSibling.textContent) <=
-        trade - trade * 0.0001
-      ) {
-        console.log("reach to sl");
-        console.log(deposit);
+      if (GreenMA > RedMA) {
+        if (
+          Number(price.nextElementSibling.textContent) >=
+          trade + trade * 0.0001
+        ) {
+          // console.log(deposit);
+          deposit += MonetFlowing;
+          MonetFlowing = 1;
+          trade = null;
+          console.log("reach to TP", deposit);
+        } else if (
+          Number(price.nextElementSibling.textContent) <=
+          trade - trade * 0.0001
+        ) {
+          deposit -= MonetFlowing;
+          console.log("reach to sl", deposit);
+          // console.log(deposit);
 
-        trade = null;
+          MonetFlowing *= 2;
+          trade = null;
+        }
+      } else {
+        if (
+          Number(price.nextElementSibling.textContent) <=
+          trade - trade * 0.0001
+        ) {
+          // console.log(deposit);
+          deposit += MonetFlowing;
+          MonetFlowing = 1;
+          trade = null;
+          console.log("reach to TP", deposit);
+        } else if (
+          Number(price.nextElementSibling.textContent) >=
+          trade + trade * 0.0001
+        ) {
+          deposit -= MonetFlowing;
+          console.log("reach to sl", deposit);
+          // console.log(deposit);
+
+          MonetFlowing *= 2;
+          trade = null;
+        }
       }
     } else {
-      deposit--;
+      // deposit;
       trade = Number(price.nextElementSibling.textContent);
-      console.log("make trade", deposit, trade);
+      // console.log("make trade", deposit, trade);
     }
   } else {
     console.log("Price not found");
   }
 }, 1000);
 
+// let deposit = 100;
+// let orderID = null;
+// let trade = null;
+// let lastTrade = 1;
+// let MonetFlowing = 1;
 
+// setInterval(() => {
+//   // console.clear();
+
+//   let price = [
+//     ...document.querySelectorAll(".item-_gbYDtbd .itemTitle-_gbYDtbd"),
+//   ].find((item) => item.textContent === "Close");
+
+//   if (price) {
+//     // console.log(price.nextElementSibling.textContent);
+//     if (trade) {
+//       if (
+//         Number(price.nextElementSibling.textContent) >=
+//         trade + trade * 0.0001
+//       ) {
+//         // console.log(deposit);
+//         deposit += MonetFlowing;
+//         MonetFlowing = 1;
+//         trade = null;
+//         console.log("reach to TP", deposit);
+//       } else if (
+//         Number(price.nextElementSibling.textContent) <=
+//         trade - trade * 0.0001
+//       ) {
+//         deposit -= MonetFlowing;
+//         console.log("reach to sl", deposit);
+//         // console.log(deposit);
+
+//         MonetFlowing *= 2;
+//         trade = null;
+//       }
+//     } else {
+//       // deposit;
+//       trade = Number(price.nextElementSibling.textContent);
+//       // console.log("make trade", deposit, trade);
+//     }
+//   } else {
+//     console.log("Price not found");
+//   }
+// }, 1000);
+////ai bot
