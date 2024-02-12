@@ -44,7 +44,6 @@ const intervalId = setInterval(() => {
         ) {
           deposit -= MonetFlowing;
           console.log("reach to sl", deposit);
-
           MonetFlowing *= 2;
           trade = null;
         }
@@ -63,7 +62,6 @@ const intervalId = setInterval(() => {
         ) {
           deposit -= MonetFlowing;
           console.log("reach to sl", deposit);
-
           MonetFlowing *= 2;
           trade = null;
         }
@@ -75,4 +73,3 @@ const intervalId = setInterval(() => {
     console.log("Price not found");
   }
 }, 1000);
-
