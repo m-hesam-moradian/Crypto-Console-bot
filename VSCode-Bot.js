@@ -32,14 +32,12 @@ const intervalId = setInterval(() => {
   ].find((item) => item.textContent === "Close");
 
   if (price) {
-    // console.log(price.nextElementSibling.textContent);
     if (trade) {
       if (GreenMA > RedMA) {
         if (
           Number(price.nextElementSibling.textContent) >=
           trade + trade * 0.0001
         ) {
-          // console.log(deposit);
           deposit += MonetFlowing;
           MonetFlowing = 1;
           trade = null;
@@ -50,7 +48,6 @@ const intervalId = setInterval(() => {
         ) {
           deposit -= MonetFlowing;
           console.log("reach to sl", deposit);
-          // console.log(deposit);
 
           MonetFlowing *= 2;
           trade = null;
@@ -60,7 +57,6 @@ const intervalId = setInterval(() => {
           Number(price.nextElementSibling.textContent) <=
           trade - trade * 0.0001
         ) {
-          // console.log(deposit);
           deposit += MonetFlowing;
           MonetFlowing = 1;
           trade = null;
@@ -71,27 +67,18 @@ const intervalId = setInterval(() => {
         ) {
           deposit -= MonetFlowing;
           console.log("reach to sl", deposit);
-          // console.log(deposit);
 
           MonetFlowing *= 2;
           trade = null;
         }
       }
     } else {
-      // deposit;
       trade = Number(price.nextElementSibling.textContent);
-      // console.log("make trade", deposit, trade);
     }
   } else {
     console.log("Price not found");
   }
 }, 1000);
-
-// let deposit = 100;
-// let orderID = null;
-// let trade = null;
-// let lastTrade = 1;
-// let MonetFlowing = 1;
 
 // setInterval(() => {
 //   // console.clear();
