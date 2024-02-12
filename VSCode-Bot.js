@@ -5,7 +5,6 @@ let lastTrade = 1;
 let MonetFlowing = 1;
 
 const intervalId = setInterval(() => {
-  // console.clear();
   if (deposit <= 0) {
        clearInterval(intervalId);
     console.log("your liquaded");
