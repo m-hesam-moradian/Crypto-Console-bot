@@ -1,10 +1,3 @@
-////////////////////////////select number
-
-// async function getPrice() {
-//   try {
-//     let price = [
-//       
-
 let deposit = 100;
 let orderID = null;
 let trade = null;
