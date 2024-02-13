@@ -1,14 +1,3 @@
-log(price.nextElementSibling.textContent);
-//     } else {
-//       console.log("Price not found");
-//     }
-//     console.log("Current price: $" + price.nextElementSibling.textContent);
-//   } catch (error) {
-//     console.error("Failed to fetch price: " + error);
-//   } finally {
-//     setTimeout(getPrice, 1000);
-//   }
-// }
 
 // getPrice();
 ///
