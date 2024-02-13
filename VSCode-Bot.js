@@ -51,7 +51,7 @@ const intervalId = setInterval(() => {
           Number(price.nextElementSibling.textContent) >=
           trade + trade * DinamicPercent
         ) {
-          // console.log(deposit);
+          
           deposit += MonetFlowing;
           MonetFlowing = 0.1;
           trade = null;
