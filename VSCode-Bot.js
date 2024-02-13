@@ -1,7 +1,4 @@
 
-
-/////////my bot
-
 let deposit = 100;
 let orderID = null;
 let trade = null;
@@ -10,7 +7,7 @@ let MonetFlowing = 0.1;
 let DinamicPercent = 0.01;
 
 const intervalId = setInterval(() => {
-  // console.clear();
+
   if (deposit <= 0) {
     clearInterval(intervalId);
     console.log("your liquaded");
