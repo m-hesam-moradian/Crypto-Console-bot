@@ -7,7 +7,7 @@ let DinamicPercent = 0.001;
 
 
 const intervalId = setInterval(() => {
-  // console.clear();
+
   if (deposit <= 0) {
     clearInterval(intervalId);
     console.log("your liquaded");
