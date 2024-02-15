@@ -1,23 +1,3 @@
-//     setTimeout(getPrice, 1000);
-//   }
-
-// getPrice();
-///
-// async function Post(data) {
-//   const response = await fetch("https://mhm-jsonserver.liara.run/cryptoBot", {
-//     method: "POST",
-//     headers: {
-//       "Content-type": "application/json",
-//     },
-//     body: JSON.stringify(data),
-//   });
-
-//   const resData = await response.json();
-//   return resData;
-// }
-
-// export default Post;
-
 /////////my bot
 
 let deposit = 10;
