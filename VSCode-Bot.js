@@ -1,19 +1,3 @@
-////////////////////////////select number
-
-// async function getPrice() {
-//   try {
-//     let price = [
-//       ...document.querySelectorAll(".item-_gbYDtbd .itemTitle-_gbYDtbd"),
-//     ].find((item) => item.textContent === "Close");
-//     if (price) {
-//       //   console.log(price.nextElementSibling.textContent);
-//     } else {
-//       console.log("Price not found");
-//     }
-//     console.log("Current price: $" + price.nextElementSibling.textContent);
-//   } catch (error) {
-//     console.error("Failed to fetch price: " + error);
-//   } finally {
 //     setTimeout(getPrice, 1000);
 //   }
 
