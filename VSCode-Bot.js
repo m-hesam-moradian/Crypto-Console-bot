@@ -1,4 +1,4 @@
-/////////my bot
+////////my bot
 
 let deposit = 10;
 let orderID = null;
