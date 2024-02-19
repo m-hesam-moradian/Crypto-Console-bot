@@ -1,3 +1,5 @@
+
+
 let deposit = 10;
 let orderID = null;
 let trade = null;
@@ -124,6 +126,7 @@ const intervalId = setInterval(() => {
     console.log("Price not found");
   }
 }, 1000);
+<<<<<<< HEAD
 
 function closeBot() {
   setInterval(() => {
@@ -131,3 +134,5 @@ function closeBot() {
     }
   }, 5000);
 }
+=======
+>>>>>>> ca74a337d7bc13cbcf841bdbfb17510bdc8174f3
