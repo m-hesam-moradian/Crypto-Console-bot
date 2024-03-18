@@ -20,5 +20,5 @@ async function getBalance() {
   }
 }
 
-// Call the function to get the balance
+
 getBalance();
