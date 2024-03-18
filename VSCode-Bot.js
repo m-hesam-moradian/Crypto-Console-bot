@@ -6,7 +6,7 @@ const exchange = new ccxt.binance({
   secret: "96bb1d0654ce7b1cde31e7e640c2a37b7396bd40c326912b90638527bc92ca21",
   enableRateLimit: true,
   options: {
-    defaultMarket: "future", // Set to 'spot' for spot trading
+    defaultMarket: "future", // Set to 'future' for futures trading
   },
 });
 
